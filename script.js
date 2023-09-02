@@ -1,0 +1,43 @@
+const suprise = document.getElementById('btn');
+const mainParagraph = document.getElementById('main--p');
+const person = document.getElementById('Id');
+const role = document.getElementById('position');
+
+let content = [
+  {
+    src: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg',
+    name: 'Anna Johnson',
+    role: 'WEB DESIGNER',
+    desc: 'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
+  },
+  {
+    src: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+    name: 'Peter Jones',
+    role: 'INTERN',
+    desc: 'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
+  },
+  {
+    src: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
+    name: 'Bill Anderson',
+    role: 'THE BOSS',
+    desc: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic.',
+  },
+  {
+    src: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+    name: 'Susan Smith',
+    role: 'WEB DEVELOPER',
+    desc: "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry.",
+  },
+];
+
+function renderContent() {
+  let random = Math.floor(Math.random() * content.length);
+  document.getElementById('theImg').src = content[random].src;
+  mainParagraph.textContent = content[random].desc;
+  role.textContent = content[random].role;
+  person.textContent = content[random].name;
+}
+
+suprise.addEventListener('click', renderContent);
+
+renderContent();
